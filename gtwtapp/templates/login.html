@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <form method = "POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class = "login">
+            <img src = "../static/logo.png" width ="460px" height="120px" align-items="center">
+            <input name="username" class="loginbox" type="text" placeholder="사용자 이름" required>
+            <br>
+            <input name="password" class="loginbox" type="password" placeholder="비밀번호" required>
+            <br>
+            <input type="submit" value="로그인" class="loginbtn"><br>
+            <button class="loginbtn">
+                <a href="{% url 'signup' %}" >회원가입</a>
+            </button>
+            
+        </div>
+    </form>
+</body>
+</html>
